@@ -1,0 +1,11 @@
+BootStrap: docker
+From: hurwitzlab/eggnog_mapper:2.0.1
+
+%runscript
+    exec emapper.py "$@"
+
+%post
+    # Mount points for TACC directories
+    mkdir /home1
+    mkdir /scratch
+    mkdir /work
